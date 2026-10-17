@@ -1,0 +1,22 @@
+# Replace path with the authorized dataset root. Class order follows the manuscript.
+path: datasets/BatikDet
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: Bird Pattern
+  1: Drum Pattern
+  2: Butterfly Pattern
+  3: Dragon Pattern
+  4: Fish Pattern
+  5: Human Pattern
+  6: Pomegranate Pattern
+  7: Vortex Pattern
+  8: Pomegranate Flower Pattern
+  9: Lotus Pattern
+  10: Interlocking Lozenge Pattern
+  11: Cloud Pattern
+  12: Meander Pattern
+  13: Bat Pattern
+  14: Ox Pattern
+  15: Longevity Pattern
