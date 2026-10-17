@@ -1,0 +1,27 @@
+{
+  "title": "RFH-YOLO: Relational-Field Hypergraph Modeling for Batik Pattern Detection",
+  "upload_type": "software",
+  "description": "Source release candidate. Includes RFHM, RepMANet and PD-DHAS. Dataset and checkpoints excluded. Confirm approved authorship, release version and immutable repository URL before deposit.",
+  "creators": [
+    {
+      "name": "Jia, Wei"
+    },
+    {
+      "name": "Yuan, Qingni"
+    },
+    {
+      "name": "Xie, Mingshan"
+    },
+    {
+      "name": "Zhang, Wei"
+    }
+  ],
+  "access_right": "open",
+  "license": "AGPL-3.0",
+  "keywords": [
+    "object detection",
+    "hypergraph",
+    "batik",
+    "reproducibility"
+  ]
+}

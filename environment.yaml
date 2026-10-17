@@ -1,0 +1,8 @@
+name: rfh-yolo
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+# Install PyTorch and requirements using README commands.
+# Portable candidate environment; not the original experiment lockfile.
