@@ -46,7 +46,11 @@ BatikDet/
 YOLO labels contain `class_id x_center y_center width height`, using normalized coordinates and zero-based class IDs 0–15. Each image should match the corresponding `.txt` label file by filename stem. This folder layout is illustrative, not a claim about the original server layout.
 
 The manuscript describes **9,777 images, 75,249 annotated instances, and train/val/test splits of 7,820/978/979 images**. The 16 classes, in ID order, are: Bird, Drum, Butterfly, Dragon, Fish, Human, Pomegranate, Vortex, Pomegranate Flower, Lotus, Interlocking Lozenge, Cloud, Meander, Bat, Ox, and Longevity.
+Dataset Availability
 
+The BatikDet dataset contains 9,777 images and 75,249 annotated instances across 16 batik pattern categories.
+The dataset is available upon reasonable request for academic research purposes. To request access, please contact the corresponding author at wjia@gzu.edu.cn.
+Dataset access is subject to applicable data-use agreements and copyright restrictions.
 ## Train
 
 Edit the `data` path in `train.py` and run:
