@@ -23,25 +23,34 @@ Publication, checkpoint distribution, and dataset access are subject to author a
 
 ## Environment and installation
 
-The `environment.yaml` includes Python 3.8.16, PyTorch 2.0.1, torchvision 0.15.2, and CUDA 11.7-related packages.
+The RFH-YOLO experiments were conducted using the following hardware and software environment:
 
-The current `train.py` uses `torch.serialization.add_safe_globals`, which requires a newer PyTorch version than 2.0.1.
+- **Operating system:** Ubuntu 22.04
+- **GPU:** NVIDIA GeForce RTX 3090 × 4
+- **Python:** 3.12.7
+- **PyTorch:** 2.5.1
+- **CUDA:** 12.4
 
-Install a compatible PyTorch, torchvision, and CUDA combination according to your NVIDIA driver and system configuration. See the [official PyTorch installation guide](https://pytorch.org/get-started/previous-versions/).
+The main training configuration uses an input resolution of 640 × 640, a batch size of 20, and SGD optimization with an initial learning rate of 0.01, momentum of 0.937, and weight decay of 0.0005. The maximum number of training epochs is 500, with an early-stopping patience of 100.
+
+The box, classification, and DFL loss weights are set to 7.5, 0.5, and 1.5, respectively.
+
+Install the dependencies using the following commands:
 
 ```bash
-conda create -n rfh-yolo python=3.10 -y
+conda create -n rfh-yolo python=3.12 -y
 conda activate rfh-yolo
 
-# Install compatible PyTorch and torchvision versions for your CUDA environment and NVIDIA driver.
+# Install PyTorch 2.5.1 with CUDA 12.4 support.
+python -m pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cu124
 
 python -m pip install "numpy<2" -r requirements.txt
 python -m pip install -e . --no-deps
 
-python -c "import torch, ultralytics; print(torch.__version__, ultralytics.__file__); print(hasattr(torch.serialization, 'add_safe_globals'))"
+python -c "import torch, ultralytics; print(torch.__version__, torch.version.cuda, ultralytics.__file__)"
 ```
 
-Run all commands from the repository root. Confirm that `ultralytics.__file__` points to the local RFH-YOLO implementation rather than another Ultralytics installation from PyPI.
+Run all commands from the repository root. Ensure that the imported Ultralytics package points to the local RFH-YOLO implementation.
 
 For reproducibility, record the Python package versions (`python -m pip freeze`), GPU model, NVIDIA driver version, and CUDA environment.
 
