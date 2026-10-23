@@ -12,7 +12,7 @@ Publication, checkpoint distribution, and dataset access are subject to author a
 
 ## Layout
 
-- `train.py`: main single-GPU training entry point.
+- `train.py`: main model training entry point.
 - `test.py`: main test-set evaluation and image prediction entry point, including auxiliary-head pruning and convolution fusion.
 - `train_repmanetpp_original.py`, `test_repmanetpp_original.py`: alternative training and evaluation scripts using different model configurations.
 - `ultralytics/`: modified local implementation, including `nn/modules/block.py` (RFHM, RepMANet, RepMixConv), `nn/modules/head.py` (dual-head Detect), `utils/loss.py` (progress-dependent auxiliary supervision), and `nn/tasks.py` (`convert_to_deploy`).
@@ -26,7 +26,7 @@ Publication, checkpoint distribution, and dataset access are subject to author a
 The RFH-YOLO experiments were conducted using the following hardware and software environment:
 
 - **Operating system:** Ubuntu 22.04
-- **GPU:** NVIDIA GeForce RTX 3090 × 4
+- **GPU:** NVIDIA GeForce RTX 3090
 - **Python:** 3.12.7
 - **PyTorch:** 2.5.1
 - **CUDA:** 12.4
@@ -96,7 +96,7 @@ python train.py
 
 The main training script loads `ultralytics/cfg/models/hyper-yolo/hyper-yolon-repmanet.yaml`.
 
-The training configuration includes **500 planned epochs, batch size 20, image size 640, the SGD optimizer, GPU 0, 8 data-loading workers, early-stopping patience of 100, deterministic mode enabled, and AMP disabled**.
+The training configuration includes **500 planned epochs, batch size 20, image size 640, the SGD optimizer, 8 data-loading workers, early-stopping patience of 100, deterministic mode enabled, and AMP disabled**.
 
 The saved `runs/train2/args.yaml` additionally records `pretrained: false`, `seed: 0`, `lr0: 0.01`, `momentum: 0.937`, `weight_decay: 0.0005`, and box/classification/DFL loss weights of **7.5/0.5/1.5**.
 
