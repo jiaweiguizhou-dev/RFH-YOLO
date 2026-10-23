@@ -14,7 +14,6 @@ Publication, checkpoint distribution, and dataset access remain subject to autho
 - `runs/train2/args.yaml`, `runs/train2/results.csv`: existing recorded run arguments and training log.
 - `runs/train2/weights/best.pt`, `runs/train2/weights/epoch300.pt`: included checkpoints; their performance was not independently revalidated during documentation preparation.
 - `environment.yaml`, `requirements.txt`: inherited environment and dependency specifications, not a verified environment lockfile.
-- `My paper.tex`, `RELEASE_NOTES.md`, `LICENSE`: manuscript source, implementation naming/compatibility notes, and inherited AGPL-3.0 license.
 
 The archive does **not** contain `scripts/run.py`, `configs/train/batikdet-recorded.yaml`, `configs/datasets/batikdet.yaml`, `docs/DATA_AND_WEIGHTS.md`, `CITATION.cff`, or `.zenodo.json`. Commands referring to those paths do not apply to this code.
 
